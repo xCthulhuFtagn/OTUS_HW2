@@ -1,0 +1,5 @@
+E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CMakeFiles/edit_cache.dir
+E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CMakeFiles/main.dir
+E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CMakeFiles/package.dir
+E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CMakeFiles/package_source.dir
+E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CMakeFiles/rebuild_cache.dir

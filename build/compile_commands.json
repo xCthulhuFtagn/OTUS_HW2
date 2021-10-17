@@ -1,0 +1,7 @@
+[
+{
+  "directory": "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build",
+  "command": "E:\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -IE:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build -g -o CMakeFiles\\main.dir\\main.cpp.obj -c E:\\DEV_Workspaces\\From_VStudio_code\\OTUS\\HW2\\OTUS_HW2\\main.cpp",
+  "file": "E:\\DEV_Workspaces\\From_VStudio_code\\OTUS\\HW2\\OTUS_HW2\\main.cpp"
+}
+]
