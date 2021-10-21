@@ -30,8 +30,11 @@ private:
 
 class MemoryPool{
 public:
-    MemoryPool(){}
+    MemoryPool(){
+        std::cout << "Constructor of MemoryPool" << std::endl;
+    }
     ~MemoryPool(){
+        std::cout << "Deconstructor of MemoryPool" << std::endl;
         auto killer = pieces;
         while(killer){
             auto tmp = killer;
