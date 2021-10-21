@@ -3,83 +3,70 @@
 #include <map>
 #include <memory>
 #include <algorithm>
+#include <list>
+
 
 class MemoryPiece{
 public:
     MemoryPiece(size_t l){
         std::cout<<"Constructed MemoryPiece of "<<l<<" bytes"<<std::endl;
         bytes = new char[l];
-        pos = bytes; 
         len = l;
     }
     ~MemoryPiece(){ 
         delete[] bytes; 
         std::cout<<"Deconstructor of MemoryPiece, sized "<<this->len<<std::endl;
     }
-    bool CanFit(size_t l){  return pos - bytes + l <= len;    };
-    void* Allocate(size_t l){
-        objects_in_memory.push_back(pos);
-        pos+=l;
-        std::cout<<"Allocated "<<l<<" bytes of memory from MemoryPiece"<<std::endl;
-        return (void*) *objects_in_memory.rbegin();
+    std::list<void*> SplitBySize(size_t size){
+        std::list<void *> ans;
+        for (auto pos = bytes; pos != bytes + len; pos+=size)   ans.push_back((void *)pos);
+        return ans;
     }
     MemoryPiece *next = nullptr, *prev = nullptr;
-    std::vector<char*> objects_in_memory;
 private:
-    char *bytes = nullptr, *pos;
+    char *bytes = nullptr;
     size_t len = 0;
 };
 
 class MemoryPool{
 public:
-    MemoryPool(){
-        std::cout<<"Constructed MemoryPool"<<std::endl;
-    }
+    MemoryPool(){}
     ~MemoryPool(){
-        for(auto piece = mp; piece!=nullptr; piece = piece->next){
-            piece->~MemoryPiece();
+        auto killer = pieces;
+        while(killer){
+            auto tmp = killer;
+            killer = killer->next;
+            tmp->~MemoryPiece();
         }
-        std::cout<<"Deconstructed MemoryPool"<<std::endl;
     }
     void* Allocate(size_t l){
-        if(!mp){
-            mp = new MemoryPiece(l);
-            last = mp;
-            std::cout<<"Allocated "<<l<<" bytes from MemoryPool"<<std::endl;
-            return mp->Allocate(l);
-        }else{
-            if(!last->CanFit(l)){
-                k*=2;
-                last->next = new MemoryPiece(l*k);
-                std::cout<<"Created memory piece of "<<l*k<<" bytes"<<std::endl;
-                last->next->prev = last;
-                last = last->next;
-            }
-            std::cout<<"Allocated "<<l<<" bytes from MemoryPool"<<std::endl;
-            return last->Allocate(l);
+        if(!pieces){
+            pieces = new MemoryPiece(l);
+            last = pieces;
+            unused = last->SplitBySize(l);
         }
+        if(unused.empty()){
+            last->next = new MemoryPiece(k*l);
+            k *= 2;
+            last->next->prev = last;
+            last = last->next;
+            unused = last->SplitBySize(l);
+        }
+        void *ans = *unused.begin();
+        unused.pop_front();
+        used.push_back(ans);
+        return ans;
     }
-    template<typename T>
-    void Deallocate(T* ptr){
-        std::vector<char *>::iterator it;
-        for(auto piece = mp; piece; piece = piece->next){
-            it = std::remove(piece->objects_in_memory.begin(), piece->objects_in_memory.end(), (char*) ptr);
-            if(it != piece->objects_in_memory.end()) {
-                piece->objects_in_memory.erase(it, piece->objects_in_memory.end());
-                delete[] ptr;
-                if(piece->objects_in_memory.size()==0) {
-                    if(piece->prev) piece->prev->next = piece->next;
-                    if(piece->next) piece->next->prev = piece->prev;
-                    piece->~MemoryPiece(); 
-                }
-                break;
-            }
+    void Deallocate(void* ptr){
+        if(std::find(used.begin(), used.end(), ptr) != used.end()){
+            used.remove(ptr);
+            unused.push_front(ptr);
         }
-        std::cout << "Deallocated "<<sizeof(T)<<" bytes from MemoryPool"<<std::endl;
     }
 private:
-    MemoryPiece *mp = nullptr, *last = mp;
-    size_t k = 1;
+    MemoryPiece *pieces = nullptr, *last;
+    std::list<void*> unused, used;
+    size_t k = 2;
 };
 
 template<typename T>
