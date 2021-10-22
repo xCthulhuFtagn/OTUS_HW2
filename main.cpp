@@ -90,7 +90,7 @@ struct MyAllocator {
         std::cout << "Constructor of Allocator" << std::endl;
     }
     T *allocate(std::size_t n) {
-        auto p = storage->Allocate(n);
+        auto p = storage->Allocate(n * sizeof(T));
         if (!p)
             throw std::bad_alloc();
         return reinterpret_cast<T *>(p);
@@ -115,16 +115,15 @@ int main(int, char *[]) {
         v.emplace_back(i);
         Print(v);
     }
-    Print(v);
     auto m = std::map<
         int,
         unsigned,
         std::less<int>,
-        MyAllocator<std::pair<const int, float>> 
+        MyAllocator<std::pair<const int, unsigned>> 
         >{};
     for (int i = 0; i < 10; ++i) {
         std::cout << "map size = " << m.size() << std::endl;
-        m[i] = static_cast<float>(i);
+        m[i] = static_cast<unsigned>(i);
     }
     return 0;
 }
