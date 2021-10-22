@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <list>
 
+
 class MemoryPiece{
 public:
     MemoryPiece(size_t l){
@@ -13,18 +14,17 @@ public:
         len = l;
     }
     ~MemoryPiece(){ 
-        delete[] bytes;
-        //bytes.~shared_ptr();
+        delete[] bytes; 
         std::cout<<"Deconstructor of MemoryPiece, sized "<<this->len<<std::endl;
     }
     std::list<void*> SplitBySize(size_t size){
         std::list<void *> ans;
-        for (auto pos = bytes; pos != bytes + len; pos += size)   ans.push_back((void *)pos);
+        for (auto pos = bytes; pos != bytes + len; pos+=size)   ans.push_back((void *)pos);
         return ans;
     }
     MemoryPiece *next = nullptr, *prev = nullptr;
 private:
-    char* bytes = nullptr;
+    char *bytes = nullptr;
     size_t len = 0;
 };
 
@@ -41,8 +41,6 @@ public:
             killer = killer->next;
             tmp->~MemoryPiece();
         }
-        used.clear();
-        unused.clear();
     }
     void* Allocate(size_t l){
         if(!pieces){
@@ -86,9 +84,7 @@ struct MyAllocator {
         storage->~MemoryPool();
     }
     template<typename U>
-    MyAllocator(const MyAllocator<U>&) {
-        std::cout << "Constructor of Allocator" << std::endl;
-    }
+    MyAllocator(const MyAllocator<U>&) {}
     T *allocate(std::size_t n) {
         auto p = storage->Allocate(n);
         if (!p)
@@ -103,7 +99,7 @@ struct MyAllocator {
 };
 
 template<typename T>
-void Print(const T& v){
+void Print(T v){
     for(auto el : v) std::cout << el << " ";
     std::cout<<std::endl;
 }
@@ -115,7 +111,6 @@ int main(int, char *[]) {
         v.emplace_back(i);
         Print(v);
     }
-    Print(v);
     auto m = std::map<
         int,
         unsigned,
