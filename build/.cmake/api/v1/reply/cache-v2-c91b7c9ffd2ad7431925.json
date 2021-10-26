@@ -2,6 +2,78 @@
 	"entries" : 
 	[
 		{
+			"name" : "ALLOCATOR_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Allocator_lib"
+		},
+		{
+			"name" : "ALLOCATOR_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ALLOCATOR_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/Allocator_lib"
+		},
+		{
+			"name" : "Allocator_project_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build"
+		},
+		{
+			"name" : "Allocator_project_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Allocator_project_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2"
+		},
+		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -631,7 +703,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/IP_sort"
+			"value" : "C:/Program Files (x86)/Allocator_project"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -771,7 +843,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "4"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -851,7 +923,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "IP_sort"
+			"value" : "Allocator_project"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1322,7 +1394,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "IP_sort_BINARY_DIR",
+			"name" : "DONUT_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1331,10 +1403,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build"
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Donut_lib"
 		},
 		{
-			"name" : "IP_sort_IS_TOP_LEVEL",
+			"name" : "DONUT_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1343,10 +1415,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
-			"name" : "IP_sort_SOURCE_DIR",
+			"name" : "DONUT_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1355,7 +1427,43 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2"
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/Donut_lib"
+		},
+		{
+			"name" : "MAIN_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/src"
+		},
+		{
+			"name" : "MAIN_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "MAIN_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/src"
 		},
 		{
 			"name" : "PATCH_VERSION",

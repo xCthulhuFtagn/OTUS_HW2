@@ -1,0 +1,60 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "Donut_lib/libD_lib.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"Donut_lib/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "D_lib::@3c03f7366eec72f1f566",
+	"name" : "D_lib",
+	"nameOnDisk" : "libD_lib.a",
+	"paths" : 
+	{
+		"build" : "Donut_lib",
+		"source" : "Donut_lib"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "Donut_lib/Donut.h",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

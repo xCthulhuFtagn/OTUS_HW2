@@ -1,4 +1,4 @@
 # ninja log v5
-0	711	6560185352729247	CMakeFiles/main.dir/main.cpp.obj	aaa665661c1a93b6
-3	1052	6564529034823782	CMakeFiles/main.dir/main.cpp.obj	aaa665661c1a93b6
-1053	1375	6564529038011334	main.exe	3845e8d49e1c5297
+0	895	6569818684431609	src/CMakeFiles/main.dir/main.cpp.obj	19ce9847dc824f36
+10	157	6569818677069148	Donut_lib/libD_lib.a	69f8cd4b8dbb61e2
+31	145	6569818676969240	Allocator_lib/libA_lib.a	5a2a2df45296ca41

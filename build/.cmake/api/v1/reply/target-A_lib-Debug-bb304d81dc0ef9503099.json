@@ -1,0 +1,60 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "Allocator_lib/libA_lib.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"Allocator_lib/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "A_lib::@51c1b5338a2ddacabefd",
+	"name" : "A_lib",
+	"nameOnDisk" : "libA_lib.a",
+	"paths" : 
+	{
+		"build" : "Allocator_lib",
+		"source" : "Allocator_lib"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "Allocator_lib/Allocator.h",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

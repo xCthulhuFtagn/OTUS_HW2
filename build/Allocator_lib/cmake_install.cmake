@@ -1,4 +1,4 @@
-# Install script for directory: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2
+# Install script for directory: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/Allocator_lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,21 +37,3 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "E:/mingw64/bin/objdump.exe")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Donut_lib/cmake_install.cmake")
-  include("E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Allocator_lib/cmake_install.cmake")
-  include("E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/src/cmake_install.cmake")
-
-endif()
-
-if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-else()
-  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-endif()
-
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/${CMAKE_INSTALL_MANIFEST}"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

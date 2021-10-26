@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: IP_sort
+# Project: Allocator_project
 # Configurations: Debug
 # =============================================================================
 
@@ -42,52 +42,6 @@ include CMakeFiles/rules.ninja
 cmake_ninja_workdir = E$:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/
 
 #############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
-  DESC = Running CMake cache editor...
-  pool = console
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target main
-
-
-#############################################
-# Order-only phony target for main
-
-build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
-
-build CMakeFiles/main.dir/main.cpp.obj: CXX_COMPILER__main_Debug E$:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/main.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles\main.dir\main.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IE:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target main
-
-
-#############################################
-# Link the executable main.exe
-
-build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\main.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = main.exe
-  TARGET_IMPLIB = libmain.dll.a
-  TARGET_PDB = main.exe.dbg
-
-
-#############################################
 # Utility command for package
 
 build CMakeFiles/package.util: CUSTOM_COMMAND all
@@ -112,6 +66,18 @@ build package_source: phony CMakeFiles/package_source.util
 
 
 #############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
@@ -123,9 +89,262 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build Donut_lib/CMakeFiles/package.util: CUSTOM_COMMAND Donut_lib/all
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build Donut_lib/package: phony Donut_lib/CMakeFiles/package.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target D_lib
+
+
+#############################################
+# Order-only phony target for D_lib
+
+build cmake_object_order_depends_target_D_lib: phony || Donut_lib/CMakeFiles/D_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target D_lib
+
+
+#############################################
+# Link the static library Donut_lib\libD_lib.a
+
+build Donut_lib/libD_lib.a: CXX_STATIC_LIBRARY_LINKER__D_lib_Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Donut_lib\CMakeFiles\D_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Donut_lib\libD_lib.a
+  TARGET_PDB = D_lib.a.dbg
+
+
+#############################################
+# Utility command for package_source
+
+build Donut_lib/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build Donut_lib/package_source: phony Donut_lib/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build Donut_lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\Donut_lib && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build Donut_lib/edit_cache: phony Donut_lib/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Donut_lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\Donut_lib && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Donut_lib/rebuild_cache: phony Donut_lib/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build Allocator_lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\Allocator_lib && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build Allocator_lib/edit_cache: phony Allocator_lib/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target A_lib
+
+
+#############################################
+# Order-only phony target for A_lib
+
+build cmake_object_order_depends_target_A_lib: phony || Allocator_lib/CMakeFiles/A_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target A_lib
+
+
+#############################################
+# Link the static library Allocator_lib\libA_lib.a
+
+build Allocator_lib/libA_lib.a: CXX_STATIC_LIBRARY_LINKER__A_lib_Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Allocator_lib\CMakeFiles\A_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Allocator_lib\libA_lib.a
+  TARGET_PDB = A_lib.a.dbg
+
+
+#############################################
+# Utility command for package
+
+build Allocator_lib/CMakeFiles/package.util: CUSTOM_COMMAND Allocator_lib/all
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build Allocator_lib/package: phony Allocator_lib/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build Allocator_lib/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build Allocator_lib/package_source: phony Allocator_lib/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Allocator_lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\Allocator_lib && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Allocator_lib/rebuild_cache: phony Allocator_lib/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\src && "C:\Program Files\CMake\bin\cmake-gui.exe" -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || cmake_object_order_depends_target_A_lib cmake_object_order_depends_target_D_lib
+
+build src/CMakeFiles/main.dir/main.cpp.obj: CXX_COMPILER__main_Debug E$:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/src/main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = src\CMakeFiles\main.dir\main.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IE:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/src -IE:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/src/../Allocator_lib -IE:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/src/../Donut_lib
+  OBJECT_DIR = src\CMakeFiles\main.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\main.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable src\main.exe
+
+build src/main.exe: CXX_EXECUTABLE_LINKER__main_Debug src/CMakeFiles/main.dir/main.cpp.obj | Donut_lib/libD_lib.a Allocator_lib/libA_lib.a || Allocator_lib/libA_lib.a Donut_lib/libD_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = Donut_lib/libD_lib.a  Allocator_lib/libA_lib.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = src\CMakeFiles\main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = src\main.exe
+  TARGET_IMPLIB = src\libmain.dll.a
+  TARGET_PDB = main.exe.dbg
+
+
+#############################################
+# Utility command for package
+
+build src/CMakeFiles/package.util: CUSTOM_COMMAND src/all
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build src/package: phony src/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build src/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build && "C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build src/package_source: phony src/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build\src && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2 -BE:\DEV_Workspaces\From_VStudio_code\OTUS\HW2\OTUS_HW2\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
-build main: phony main.exe
+build A_lib: phony Allocator_lib/libA_lib.a
+
+build D_lib: phony Donut_lib/libD_lib.a
+
+build libA_lib.a: phony Allocator_lib/libA_lib.a
+
+build libD_lib.a: phony Donut_lib/libD_lib.a
+
+build main: phony src/main.exe
+
+build main.exe: phony src/main.exe
 
 # =============================================================================
 # Folder targets.
@@ -135,7 +354,28 @@ build main: phony main.exe
 #############################################
 # Folder: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build
 
-build all: phony main.exe
+build all: phony Donut_lib/all Allocator_lib/all src/all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Allocator_lib
+
+build Allocator_lib/all: phony Allocator_lib/libA_lib.a
+
+# =============================================================================
+
+#############################################
+# Folder: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/Donut_lib
+
+build Donut_lib/all: phony Donut_lib/libD_lib.a
+
+# =============================================================================
+
+#############################################
+# Folder: E:/DEV_Workspaces/From_VStudio_code/OTUS/HW2/OTUS_HW2/build/src
+
+build src/all: phony src/main.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.
@@ -149,14 +389,14 @@ build all: phony main.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../Allocator_lib/CMakeLists.txt ../CMakeLists.txt ../Donut_lib/CMakeLists.txt ../src/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake: phony
+build ../Allocator_lib/CMakeLists.txt ../CMakeLists.txt ../Donut_lib/CMakeLists.txt ../src/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPack.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/CPackComponent.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.21/Templates/CPackConfig.cmake.in CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake: phony
 
 
 #############################################

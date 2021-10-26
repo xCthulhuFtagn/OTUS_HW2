@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: IP_sort
+# Project: Allocator_project
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -17,6 +17,24 @@
 rule CUSTOM_COMMAND
   command = $COMMAND
   description = $DESC
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__D_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && E:\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && E:\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__A_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && E:\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && E:\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
 
 
 #############################################
