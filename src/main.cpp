@@ -1,32 +1,55 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <memory>
 
 #include "Allocator.h"
 #include "Donut.h"
 
+using namespace std;
+
 int main(int, char *[]) {
-    auto v = std::vector<int, MyAllocator<int>>{};
-    for (int i = 0; i < 6; ++i) {
-        std::cout << "vector size = " << v.size() + 1 << std::endl;
-        v.emplace_back(i);
+    auto m_standard = map<int,int>{};
+    m_standard[0] = 1;
+    for (int i = 1; i < 10; ++i) {
+        m_standard[i] = m_standard[i-1]*i;
     }
+    cout << "Map without specified allocator:" << endl;
+    for(const auto& el : m_standard){
+        cout <<  el.first << " " << el.second << endl; 
+    }
+
     auto m = std::map<
-        int,
-        unsigned,
+        int, int,
         std::less<int>,
         MyAllocator<std::pair<const int, unsigned>> 
-        >{};
-    for (int i = 0; i < 10; ++i) {
-        std::cout << "map size = " << m.size() << std::endl;
-        m[i] = static_cast<unsigned>(i);
+    >{};
+    m[0] = 1;
+    for (int i = 1; i < 10; ++i) {
+        m[i] = m[i-1]*i;
     }
+    cout << "Map with my allocator:" << endl;
+    for(const auto& el : m){
+        cout <<  el.first << " " << el.second << endl; 
+    }
+
+    auto d_standard = Donut<int, std::allocator<DonutPiece<int>>>();
+    for (int i = 0; i < 10; ++i) {
+        d_standard.add_bite(i);
+    }
+    cout << "Donut with standard allocator:" << endl;
+    for(auto i = 0; i < 10; ++i){
+        cout<< d_standard[i] << " ";
+    }
+    cout<<endl;
     auto d = Donut<int, MyAllocator<DonutPiece<int>>>();
     for (int i = 0; i < 10; ++i) {
-        std::cout << "donut size = " << i << std::endl;
         d.add_bite(i);
-        for(auto s = 0; s <= i; ++s) std::cout << d[s] << " ";
-        std::cout<<std::endl;
     }
+    cout << "Donut with my allocator:" << endl;
+    for(auto i = 0; i < 10; ++i){
+        cout<< d[i] << " ";
+    }
+    cout<<endl;
+
     return 0;
 }
