@@ -3,8 +3,7 @@ name: 'C++ CI'
 on:
   push:
     branches:
-      - HW1.1
-      - HW1.2
+      - main
       - feature/github_actions
 
 jobs:
