@@ -45,7 +45,7 @@ MemoryPiece::MemoryPiece(std::size_t l){
     bytes = new char[l];
     len = l;
 }
-MemoryPiece::~MemoryPiece() noexcept{ 
+MemoryPiece::~MemoryPiece() { 
     delete[] bytes;
     //std::cout<<"Deconstructor of MemoryPiece, sized "<<this->len<<std::endl;
 }
@@ -58,7 +58,7 @@ std::list<void *> MemoryPiece::SplitBySize(size_t size){
 MemoryPool::MemoryPool(){
     //std::cout << "Constructor of MemoryPool" << std::endl;
 }
-MemoryPool::~MemoryPool() noexcept{
+MemoryPool::~MemoryPool() {
     //std::cout << "Deconstructor of MemoryPool" << std::endl;
     auto killer = pieces;
     while(killer){
